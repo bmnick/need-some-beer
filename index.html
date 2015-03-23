@@ -55,7 +55,8 @@
                 'jsonpCallback' : 'cb',
                 'success' : function(data, textStats, XMLHttpRequest) {
                     console.log(data);
-                    for (var business in data.businesses) {
+                    for (var idx in data.businesses) {
+                      var business = data.businesses[idx];
                       console.log(business);
                       $('#bars').append("<li>" + business["name"] + "</li>");
                     }
