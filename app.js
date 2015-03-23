@@ -322,14 +322,13 @@ $(function() {
     secret: 'qdT_s2CcrILFtLxD9yJxMVe8CRA'
   };
 
-  console.log(oauth.toHeader(oauth.authorize(request_data, token)));
-
   $.ajax({
       url: request_data.url,
       type: request_data.method,
       dataType: "jsonp",
       crossOrigin: true,
-      data: oauth.authorize(request_data, token)
+      data: requestData.data,
+      headers: oauth.toHeader(oauth.authorize(request_data, token))
   }).done(function(data) {
     console.log("HTTP Request Succeeded: " + jqXHR.status);
     console.log(data);
