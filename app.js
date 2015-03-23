@@ -317,13 +317,18 @@ $(function() {
     }
   };
 
+  var token = {
+    public: 'fc4ehK8I7Cyg9x2ZWX5875WG-YMvEAK2',
+    secret: 'qdT_s2CcrILFtLxD9yJxMVe8CRA'
+  };
+
   $.ajax({
       url: request_data.url,
       type: request_data.method,
       data: request_data.data,
       dataType: "jsonp",
       crossOrigin: true,
-      headers: oauth.toHeader(oauth.authorize(request_data))
+      headers: oauth.toHeader(oauth.authorize(request_data, token))
   }).done(function(data) {
     console.log("HTTP Request Succeeded: " + jqXHR.status);
     console.log(data);
