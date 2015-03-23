@@ -1,9 +1,27 @@
 $(function() {
   // Yelp search (GET http://api.yelp.com/v2/search)
 
+ //  jQuery.ajax({
+ //     type: "GET",
+ //     url: 'http://api.geonames.org/postalCodeLookupJSON?postalcode=6600&country=AT&username=demo',
+ //     dataType: "jsonp",
+ //     cache: false,
+ //     crossDomain: true,
+ //     processData: true,
+ //
+ //
+ //     success: function (data) {
+ //         alert(JSON.stringify(data));
+ //     },
+ //     error: function (XMLHttpRequest, textStatus, errorThrown) {
+ //         alert("error");
+ //     }
+ // });
+
   $.ajax({
       url: "http://api.yelp.com/v2/search",
       type: "GET",
+      crossDomain: true,
       data:{
           "term":"beer",
           "cll":"43.161030,-77.610922",
