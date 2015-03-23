@@ -322,7 +322,7 @@ $(function() {
       url: request_data.url,
       type: request_data.method,
       data: request_data.data,
-      headers: oauth.toHeader(oauth.authorize(request_data, token))
+      headers: oauth.toHeader(oauth.authorize(request_data))
   }).done(function(data) {
     console.log("HTTP Request Succeeded: " + jqXHR.status);
     console.log(data);
