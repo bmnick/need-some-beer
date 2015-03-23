@@ -322,6 +322,8 @@ $(function() {
       url: request_data.url,
       type: request_data.method,
       data: request_data.data,
+      dataType: "jsonp",
+      crossOrigin: true,
       headers: oauth.toHeader(oauth.authorize(request_data))
   }).done(function(data) {
     console.log("HTTP Request Succeeded: " + jqXHR.status);
