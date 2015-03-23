@@ -56,7 +56,8 @@
                 'success' : function(data, textStats, XMLHttpRequest) {
                     console.log(data);
                     for (var business in data.businesses) {
-                      $('#bars').append("<li>" + business.name + "</li>");
+                      console.log(business);
+                      $('#bars').append("<li>" + business["name"] + "</li>");
                     }
                 }
             });
