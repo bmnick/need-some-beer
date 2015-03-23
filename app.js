@@ -325,16 +325,28 @@ $(function() {
   $.ajax({
       url: request_data.url,
       type: request_data.method,
-      data: request_data.data,
       dataType: "jsonp",
       crossOrigin: true,
-      headers: oauth.toHeader(oauth.authorize(request_data, token))
+      data: oauth.authorize(request_data, token)
   }).done(function(data) {
     console.log("HTTP Request Succeeded: " + jqXHR.status);
     console.log(data);
   }).fail(function(jqXHR, errorThrown, errorThrown) {
     console.log("HTTP Request Failed");
   });
+  // $.ajax({
+  //     url: request_data.url,
+  //     type: request_data.method,
+  //     data: request_data.data,
+  //     dataType: "jsonp",
+  //     crossOrigin: true,
+  //     headers: oauth.toHeader(oauth.authorize(request_data, token))
+  // }).done(function(data) {
+  //   console.log("HTTP Request Succeeded: " + jqXHR.status);
+  //   console.log(data);
+  // }).fail(function(jqXHR, errorThrown, errorThrown) {
+  //   console.log("HTTP Request Failed");
+  // });
 
   // $.ajax({
   //     url: "http://api.yelp.com/v2/search",
