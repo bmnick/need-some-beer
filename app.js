@@ -322,6 +322,8 @@ $(function() {
     secret: 'qdT_s2CcrILFtLxD9yJxMVe8CRA'
   };
 
+  console.log(oauth.toHeader(oauth.authorize(request_data, token)));
+
   $.ajax({
       url: request_data.url,
       type: request_data.method,
