@@ -314,7 +314,6 @@ $(function() {
       "term":"beer",
       "cll":"43.161030,-77.610922",
       "location":"Rochester+NY",
-      "callback":"JSON_CALLBACK",
     }
   };
 
